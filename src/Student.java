@@ -1,33 +1,31 @@
-public class Student {
-     private String studentId;
-    private String name;
+public class Student extends User {
+
     private String rollNo;
     private String branch;
     private double attendance;
     private int internalMarks;
     private int studyHours;
 
-    Student(){
-        System.out.println("Student Object created sucessfully!");
+    public Student(String studentId, String name,
+                   String rollNo, String branch,
+                   double attendance, int internalMarks,
+                   int studyHours){
+        super(studentId, name);
+        this.rollNo = rollNo;
+        this.branch = branch;
+        this.attendance = attendance;
+        this.internalMarks = internalMarks;
+        this.studyHours = studyHours;
+
+        System.out.println("Student Object created successfully!");
     }
     void study(){
-        System.out.println(name + " is studying");
+        System.out.println(getName() + " is studying");
     }
     void attendClass(){
-        System.out.println(name+ " attended the class");
+        System.out.println(getName()+ " attended the class");
     }
-    public void setStudentId(String studentId){
-        this.studentId = studentId;
-    }
-    public String getStudentId(){
-        return studentId;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
-    }
+
     public void setRollNo(String rollNo){
         this.rollNo = rollNo;
     }
@@ -73,8 +71,8 @@ public class Student {
     }
 
     void displayStudent(){
-        System.out.println("ID: " + studentId);
-        System.out.println("Name: " + name);
+        System.out.println("ID: " + getStudentId() );
+        System.out.println("Name: " + getName());
         System.out.println("Roll No: " + rollNo);
         System.out.println("Branch: " + branch);
         System.out.println("Attendance: " + attendance);
